@@ -22,7 +22,7 @@ router.post('/author', async (req: Request, res: Response) => {
 
         const authorToSave = await author.save();
         res.status(200).json(authorToSave);
-    } catch (error: unknown) {  // i actually hate typescript
+    } catch (error: unknown) {
         if (error instanceof Error) {
             res.status(400).json({ message: error.message });
         } else {
